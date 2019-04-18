@@ -1,0 +1,136 @@
+% \usepackage{amsmath}
+% \usepackage{amsfonts}
+% \usepackage{amssymb}
+% \usepackage{mathtools}
+% \usepackage{amsthm}
+% \usepackage{bbm}
+% % \usepackage{algpseudocode}
+% \usepackage{interval}
+
+\newcommand*{\authorfootcite}[1]{\citeauthor{#1}\footfullcite{#1}} 
+\newcommand*{\authorcite}[1]{\citeauthor{#1}\cite{#1}} 
+
+
+\def\[#1\]{\begin{align*}#1 \end{align*}}  % Can do newlines in \[ \] env
+
+\renewcommand*{\Re}{\operatorname{Re}}
+\renewcommand*{\Im}{\operatorname{Im}}
+\newcommand*{\ff}{\mathbb{F}}
+\newcommand*{\zz}{\mathbb{Z}}
+\newcommand*{\qq}{\mathbb{Q}}
+\newcommand*{\rr}{\mathbb{R}}
+\newcommand*{\cc}{\mathbb{C}}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}\newcommand*{\defeq}{\vcentcolon=}
+% \newcommand*{\defeq}{\vcentcolon=}
+\newcommand*{\eqdef}{=\vcentcolon}
+
+\newcommand*{\indic}{\mathbbm{1}}
+\newcommand*{\Prob}{\mathbb{P}}
+\newcommand*{\EE}{\mathbb{E}}
+
+\newcommand*{\property}{\mathcal{P}}
+
+\newcommand*{\Id}{\operatorname*{Id}}
+
+\newcommand*{\LL}{\mathcal{L}}
+\newcommand*{\GG}{\mathcal{G}}
+\newcommand*{\MM}{\mathcal{M}}
+
+\newcommand*{\normal}{\mathcal{N}}
+
+\newcommand*{\Xx}{\mathbf{x}}
+\newcommand*{\Yy}{\mathbf{y}}
+\newcommand*{\Zz}{\mathbf{z}}
+
+\newcommand*{\lb}{\log_2}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\setx}{\lbrace}{\rbrace}
+\DeclarePairedDelimiterXPP{\set}[1]{}{\lbrace}{\rbrace}{}{
+  \renewcommand\given{\nonscript\:\delimsize\colon\nonscript\:\mathopen{}} #1
+}
+\DeclarePairedDelimiter{\angles}{\langle}{\rangle}
+\DeclarePairedDelimiter{\brackets}{[}{]}
+\DeclarePairedDelimiterX{\paren}[1]{(}{)}{#1}
+%\DeclarePairedDelimiterX{\paren}[1]{(}{)}{
+%  \ifblank{#1}{\:\cdot\:}{#1}
+%}
+\DeclarePairedDelimiterX{\abs}[1]{\lvert}{\rvert}{
+  \ifblank{#1}{\:\cdot\:}{#1}
+}
+\DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{
+  \ifblank{#1}{\:\cdot\:}{#1}
+  \mathop{}\mathclose{}
+  \delimsize\vert
+  \mathopen{}\mathop{}
+  \ifblank{#2}{\:\cdot\:}{#2}
+}
+\DeclarePairedDelimiterX{\norm}[1]{\lVert}{\rVert}{
+  \ifblank{#1}{\:\cdot\:}{#1}
+}
+\DeclarePairedDelimiterXPP{\dist}[3]{d_{#1}}{(}{)}{}{#2, #3}
+
+\providecommand\given{}
+\DeclarePairedDelimiterXPP{\xprob}[1]{\Prob}{[}{]}{}{
+  \renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}} #1
+}
+\DeclarePairedDelimiterXPP{\yprob}[2]{\Prob_{#1}}{[}{]}{}{
+  \renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}} #2
+}
+\DeclarePairedDelimiterXPP{\uprob}[2]{\operatorname*{\Prob}_{\substack{#1}}}{[}{]}{}{
+  \renewcommand\given{\nonscript\:\delimsize\vert\nonscript\:\mathopen{}} #2
+}
+\DeclarePairedDelimiterXPP{\xe}[1]{\EE}{[}{]}{}{#1}
+\DeclarePairedDelimiterXPP{\xv}[1]{\mathbb{V}\mathrm{ar}}{[}{]}{}{#1}
+\DeclarePairedDelimiterXPP{\xvar}[1]{\mathrm{Var}}{[}{]}{}{#1}
+
+\DeclarePairedDelimiterXPP{\ye}[2]{\EE_{#1}}{[}{]}{}{#2}
+\DeclarePairedDelimiterXPP{\ue}[2]{\operatorname*{\EE}_{\substack{#1}}}{[}{]}{}{#2}
+\DeclarePairedDelimiterXPP{\xI}[1]{\indic}{[}{]}{}{#1}
+\DeclarePairedDelimiterXPP{\yI}[2]{\indic_{#1}}{[}{]}{}{#2}
+
+
+
+\newcommand*{\itern}{\brackets{n}}
+\DeclarePairedDelimiter{\dual}{\bigl(}{\bigr)'}
+
+\DeclarePairedDelimiterXPP{\xLn}[1]{\operatorname{\mathrm{ln}}}{(}{)}{}{#1}
+%\DeclarePairedDelimiterXPP{\deg}[1]{\operatorname{\mathrm{deg}}}{(}{)}{}{#1}
+\DeclarePairedDelimiterXPP{\Dim}[1]{\operatorname{\mathrm{dim}}}{(}{)}{}{#1}
+\DeclarePairedDelimiterXPP{\Sp}[1]{\operatorname{\mathrm{Sp}}}{(}{)}{}{#1}
+\DeclarePairedDelimiterXPP{\Ker}[1]{\operatorname{\mathrm{Ker}}}{(}{)}{}{#1}
+
+
+\DeclarePairedDelimiterXPP{\fw}[2]{\mathbf{W}^{#1}}{[}{]}{}{#2}
+
+\DeclarePairedDelimiterXPP{\Stab}[2]{\mathbf{Stab}_{#1}}{[}{]}{}{#2}
+\DeclarePairedDelimiterXPP{\Spec}[2]{\mathbf{Spec}_{#1}}{[}{]}{}{#2}
+
+
+% \newcommand*{\Ftwo}{\set{\pm 1}}
+
+
+\newcommand*{\inftoinf}{\brackets{-\infty .. \infty}}
+\newcommand*{\ivdlm}{,}
+
+% \newcommand*{\holder}{H\"{o}lder }
+% \newcommand*{\hct}{\(\paren[]{p, q, \rho}\)}
+
+% obsolete
+%\DeclarePairedDelimiterXPP{\xProb}[1]{\Prob}{[}{]}{}{#1}
+%\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+%\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+%\DeclarePairedDelimiter{\set}{\lbrace}{\rbrace}
+%\DeclarePairedDelimiterX{\zE}[1]{\operatorname*{\E}_{\substack{#1}}}{}{}
+%\DeclarePairedDelimiter{\fw}{[}{]}
+
+
+
+% Mooiere lege verzameling
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+% \let\oldphi\phi
+% \let\phi\varphi

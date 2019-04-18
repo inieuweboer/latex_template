@@ -1,0 +1,44 @@
+% Function restriction
+\newcommand*\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+}}
+\newcommand*\restrict[1]{\raisebox{-.5ex}{$|$}_{#1}}
+
+
+
+
+
+\usepackage{letltxmacro}
+\makeatletter
+\let\oldr@@t\r@@t
+\def\r@@t#1#2{%
+\setbox0=\hbox{$\oldr@@t#1{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+\LetLtxMacro{\oldsqrt}{\sqrt}
+\renewcommand*{\sqrt}[2][\ ]{\oldsqrt[#1]{#2}}
+\makeatother
+
+
+
+
+\usepackage{scalerel,stackengine}
+\stackMath
+\newcommand\xhat[1]{%
+  \savestack{\tmpbox}{\stretchto{%
+    \scaleto{%
+      \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+      {\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+    }{\textheight}% 
+  }{0.5ex}}%
+  \stackon[1pt]{#1}{\tmpbox}%
+}
+
+
+
+
+\newcommand{\inv}{^{\raisebox{.2ex}{$\scriptscriptstyle-1$}}}
